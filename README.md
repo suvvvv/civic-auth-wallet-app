@@ -1,0 +1,113 @@
+# Civic Auth Wallet App
+
+## Overview
+
+This project demonstrates the integration of Civic Auth into a modern React application, providing a seamless authentication experience with embedded wallets. The application showcases how to leverage Civic Auth to enable familiar sign-in options (including Google OAuth) while offering embedded blockchain wallets to users with a sleek, dark-themed UI.
+
+## Features
+
+- **Multi-Provider Authentication**: Seamless login experience using Civic Auth with Google OAuth integration
+- **Embedded Wallets**: Automatic creation of blockchain wallets for authenticated users
+- **Dark Mode UI**: Modern, responsive dark-themed interface with animations
+- **Wallet Management**: View wallet addresses, balances, and transaction capabilities
+- **Security Features**: Demonstrates secure key management without seed phrases
+- **Animated Transitions**: Smooth animations and transitions for an enhanced user experience
+
+## Why Civic Auth?
+
+Civic Auth provides a simple, flexible, and fast way to integrate authentication into applications. With Civic Auth, you can:
+
+- Enable familiar sign-in options like Google, Discord, or other OAuth providers
+- Offer embedded wallets that unlock blockchain benefits for your users
+- Get up and running in 5 minutes with minimal configuration
+- Provide a seamless user experience without compromising on security
+
+## Technologies Used
+
+- React 18 with TypeScript
+- Civic Auth Web3 SDK (`@civic/auth-web3`)
+- Google OAuth Integration (`@react-oauth/google`)
+- Tailwind CSS for styling
+- React Router for navigation
+- React Icons for UI elements
+
+## Prerequisites
+
+- Node.js (v16+)
+- npm or yarn
+- A Civic Auth client ID (sign up at [auth.civic.com](https://auth.civic.com))
+
+## Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/civic-auth-wallet-app.git
+   cd civic-auth-wallet-app
+   ```
+
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env` file in the root directory and add your Civic Auth client ID
+   ```
+   REACT_APP_CIVIC_CLIENT_ID=your-client-id-here
+   ```
+
+4. Start the development server
+   ```bash
+   npm start
+   ```
+
+## Usage
+
+1. Open your browser and navigate to `http://localhost:3000`
+2. Click the "Sign In" button to authenticate with Civic Auth
+3. After authentication, an embedded wallet will be automatically created
+4. Use the dashboard to view wallet details and perform transactions
+
+## Project Structure
+
+```
+├── public/                  # Static files
+├── src/
+│   ├── components/          # React components
+│   │   ├── auth/            # Authentication components
+│   │   ├── wallet/          # Wallet-related components
+│   │   └── ui/              # UI components
+│   ├── contexts/            # React contexts
+│   ├── hooks/               # Custom hooks
+│   ├── pages/               # Page components
+│   ├── services/            # API and service functions
+│   ├── types/               # TypeScript type definitions
+│   ├── utils/               # Utility functions
+│   ├── App.tsx              # Main App component
+│   └── index.tsx            # Entry point
+├── .env                     # Environment variables
+├── package.json             # Dependencies and scripts
+└── README.md                # Project documentation
+```
+
+## Available Scripts
+
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+
+## Testing
+
+The application includes comprehensive tests for components and functionality:
+
+```bash
+npm test
+```
+
+## License
+
+MIT
+
+## Acknowledgements
+
+- [Civic Auth](https://auth.civic.com) for providing the authentication SDK
+- [Create React App](https://create-react-app.dev/) for the project setup
