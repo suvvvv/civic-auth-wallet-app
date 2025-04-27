@@ -103,10 +103,6 @@ The application includes comprehensive tests for components and functionality:
 npm test
 ```
 
-## License
-
-MIT
-
 ## Acknowledgements
 
 - [Civic Auth](https://auth.civic.com) for providing the authentication SDK
