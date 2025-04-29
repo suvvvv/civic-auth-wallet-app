@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import { CivicAuthProvider } from '@civic/auth-web3/react';
 
 // Import components
 import Navbar from './components/ui/Navbar';
@@ -184,13 +185,15 @@ const App: React.FC = () => {
     setDarkMode(!darkMode);
   };
 
-  // Get client ID from environment variables
+  // Get client IDs from environment variables
   const googleClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID || '635396497802-0he1si2b1kiinisgpmlkdq0v6lorr6fq.apps.googleusercontent.com';
+  const civicClientId = process.env.REACT_APP_CIVIC_CLIENT_ID || '5d6330fe-fb06-4020-ba6d-0cd41f4d33eb';
 
   return (
     <React.Fragment>
       <style dangerouslySetInnerHTML={{ __html: globalAnimations }} />
-      <GoogleOAuthProvider clientId={googleClientId}>
+      <CivicAuthProvider clientId={civicClientId}>
+        <GoogleOAuthProvider clientId={googleClientId}>
           <AuthProvider>
             <Router>
               <div className={`flex flex-col min-h-screen ${darkMode ? 'dark bg-dark-background text-dark-text' : 'bg-gray-50 text-gray-900'}`}>
@@ -291,7 +294,8 @@ const App: React.FC = () => {
               </div>
             </Router>
           </AuthProvider>
-      </GoogleOAuthProvider>
+        </GoogleOAuthProvider>
+      </CivicAuthProvider>
     </React.Fragment>
   );
 }
