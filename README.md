@@ -113,35 +113,6 @@ Civic Auth provides a simple, flexible, and fast way to integrate authentication
 - Complete lessons to earn Civic Points
 - Track learning progress and knowledge growth
 
-## Demo Guide
-
-### Suggested Demo Flow
-
-1. **Start with Authentication**
-   - Begin by showing the login process with Google or Civic
-   - Highlight how no seed phrases are required
-
-2. **Wallet Overview**
-   - Demonstrate the wallet interface with ETH balance
-   - Show the wallet address with copy functionality
-   - Point out the Recent Activity section with transaction history
-
-3. **Security Features**
-   - Explain the three key security features:
-     - Secure key management without seed phrases
-     - Multi-factor authentication for transactions
-     - Social recovery options for account access
-
-4. **Feature Tour**
-   - Navigate through the main features: Moments, Progress, Referral
-   - Show how these features connect to build a comprehensive Web3 identity
-
-5. **Highlight Differentiators**
-   - No seed phrases required for wallet access
-   - Identity-first approach to Web3 interaction
-   - Gamification elements that make crypto more engaging
-   - Progressive feature unlocking for better onboarding
-
 ## Project Structure
 
 ```
