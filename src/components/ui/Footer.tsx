@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaWallet, FaGithub, FaTwitter, FaDiscord } from 'react-icons/fa';
+import { FaWallet, FaGithub, FaTwitter, FaDiscord, FaGraduationCap, FaImage, FaUsers } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -11,15 +12,15 @@ const Footer: React.FC = () => {
               <div className="bg-primary-600 p-2 rounded-full mr-2">
                 <FaWallet className="text-white text-sm" />
               </div>
-              <p className="text-lg font-semibold dark:text-dark-text">Civic Auth Wallet</p>
+              <p className="text-lg font-semibold bg-gradient-to-r from-neon-purple to-primary-500 bg-clip-text text-transparent animate-hologram-flicker">Civic Momentum</p>
             </div>
             <p className="text-sm text-gray-500 dark:text-gray-400 max-w-md">
-              Experience the future of authentication with Civic Auth and embedded wallets.
-              Secure, fast, and user-friendly.
+              Grow your Web3 identity by minting soulbound NFTs, earning points, and unlocking features.
+              Powered by Civic Auth and embedded wallets.
             </p>
           </div>
           
-          <div className="grid grid-cols-2 gap-x-12 gap-y-4 text-sm">
+          <div className="grid grid-cols-3 gap-x-8 gap-y-4 text-sm">
             <div>
               <h3 className="font-semibold mb-3 dark:text-dark-text">Resources</h3>
               <ul className="space-y-2">
@@ -42,6 +43,43 @@ const Footer: React.FC = () => {
                   >
                     Developer Dashboard
                   </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-3 dark:text-dark-text">Features</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    to="/moments"
+                    className="text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center"
+                  >
+                    <FaImage className="mr-1 text-xs" /> Moments
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/progress"
+                    className="text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center"
+                  >
+                    <FaWallet className="mr-1 text-xs" /> Progress
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/learn"
+                    className="text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center"
+                  >
+                    <FaGraduationCap className="mr-1 text-xs" /> Learn & Earn
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/referral"
+                    className="text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center"
+                  >
+                    <FaUsers className="mr-1 text-xs" /> Refer Friends
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -81,7 +119,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="mt-8 pt-6 border-t dark:border-dark-border text-center text-sm text-gray-500 dark:text-gray-400">
-          © {new Date().getFullYear()} Civic Auth Wallet App. All rights reserved.
+          © {new Date().getFullYear()} Civic Momentum. All rights reserved.
         </div>
       </div>
     </footer>

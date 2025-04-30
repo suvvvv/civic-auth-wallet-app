@@ -166,11 +166,11 @@ export const WalletActions: React.FC = () => {
             Wallet Address
           </div>
           <div className="flex items-center justify-between">
-            <div className="relative overflow-hidden rounded-lg bg-dark-input p-3 text-sm font-mono text-neon-purple flex-1 mr-2 border border-neon-purple/20 animate-scanline">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-neon-purple/10 to-transparent animate-shimmer" style={{backgroundSize: '200% 100%'}}></div>
+            <div className="relative overflow-hidden rounded-lg bg-dark-input p-3 text-sm font-mono text-neon-purple flex-1 mr-2 border border-neon-purple/20">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-neon-purple/5 to-transparent" style={{backgroundSize: '200% 100%'}}></div>
               <div className="relative">
                 {walletAddress ? (
-                  <span className="truncate block animate-hologram-flicker">{walletAddress}</span>
+                  <span className="truncate block">{walletAddress}</span>
                 ) : (
                   <span className="text-gray-500">Connecting...</span>
                 )}
@@ -178,7 +178,7 @@ export const WalletActions: React.FC = () => {
             </div>
             <button 
               onClick={copyToClipboard}
-              className="p-3 bg-dark-input rounded-lg hover:bg-gray-700 transition-colors border border-neon-purple/20 animate-neon-glow"
+              className="p-3 bg-dark-input rounded-lg hover:bg-gray-700 transition-colors border border-neon-purple/20"
               title="Copy address"
               disabled={!walletAddress}
             >
@@ -226,17 +226,17 @@ export const WalletActions: React.FC = () => {
         
         {/* Action buttons with advanced hover effects */}
         <div className="grid grid-cols-2 gap-4 animate-fade-in" style={{animationDelay: '0.6s'}}>
-          <button className="py-3 px-4 bg-gradient-to-r from-neon-purple to-primary-500 text-white rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-neon-purple/30 font-medium relative group overflow-hidden animate-neon-glow">
-            <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-20 group-hover:animate-shine"></div>
-            <span className="relative z-10 flex items-center justify-center animate-hologram-flicker">
+          <button className="py-3 px-4 bg-gradient-to-r from-neon-purple to-primary-500 text-white rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-md font-medium relative group overflow-hidden">
+            <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-10 group-hover:animate-shine"></div>
+            <span className="relative z-10 flex items-center justify-center">
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
               </svg>
               Send
             </span>
           </button>
-          <button className="py-3 px-4 bg-dark-input hover:bg-gray-700 text-white rounded-xl border border-neon-purple/30 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-neon-purple/20 font-medium relative group overflow-hidden animate-data-stream">
-            <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-neon-purple opacity-10 group-hover:animate-shine"></div>
+          <button className="py-3 px-4 bg-dark-input hover:bg-gray-700 text-white rounded-xl border border-neon-purple/20 transition-all duration-300 transform hover:scale-105 hover:shadow-md font-medium relative group overflow-hidden">
+            <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-neon-purple opacity-5 group-hover:animate-shine"></div>
             <span className="relative z-10 flex items-center justify-center">
               <svg className="w-5 h-5 mr-2 text-neon-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7l4-4m0 0l4 4m-4-4v18"></path>
@@ -247,85 +247,85 @@ export const WalletActions: React.FC = () => {
         </div>
       </div>
       
-      {/* Security features card with hover effects */}
+      {/* Recent Activity section */}
       <div className="mt-6 bg-dark-card rounded-xl p-8 shadow-2xl transform transition-all duration-300 hover:shadow-primary-500/10 backdrop-blur-sm bg-opacity-90 border border-gray-800 animate-fade-in" style={{animationDelay: '0.8s'}}>
         <h3 className="text-xl font-bold text-white mb-5 flex items-center">
-          <div className="bg-primary-500/20 p-2 rounded-lg mr-3">
-            <FaShieldAlt className="text-primary-400 text-xl" />
-          </div>
-          Security Features
+          <svg className="w-6 h-6 mr-3 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+          </svg>
+          Recent Activity
         </h3>
-        <ul className="space-y-4">
-          <li className="flex items-start transform transition-all duration-300 hover:translate-x-2 group">
-            <div className="bg-gradient-to-br from-primary-600 to-primary-400 p-1.5 rounded-full mr-3 mt-0.5 group-hover:shadow-lg group-hover:shadow-primary-500/20">
-              <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-              </svg>
+        <div className="space-y-3">
+          <div className="flex items-center justify-between p-3 bg-dark-input rounded-lg hover:bg-gray-800 transition-colors cursor-pointer group">
+            <div className="flex items-center">
+              <div className="bg-green-500/20 p-1.5 rounded-lg mr-3">
+                <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+                </svg>
+              </div>
+              <div>
+                <p className="text-sm text-white">Received ETH</p>
+                <p className="text-xs text-gray-400">2 hours ago</p>
+              </div>
             </div>
-            <p className="text-gray-300 group-hover:text-white transition-colors">Secure key management with no seed phrases to remember</p>
-          </li>
-          <li className="flex items-start transform transition-all duration-300 hover:translate-x-2 group">
-            <div className="bg-gradient-to-br from-primary-600 to-primary-400 p-1.5 rounded-full mr-3 mt-0.5 group-hover:shadow-lg group-hover:shadow-primary-500/20">
-              <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-              </svg>
+            <div className="text-right">
+              <p className="text-sm font-medium text-green-500">+0.05 ETH</p>
+              <p className="text-xs text-gray-400 group-hover:text-primary-400 transition-colors">View</p>
             </div>
-            <p className="text-gray-300 group-hover:text-white transition-colors">Multi-factor authentication for transaction approval</p>
-          </li>
-          <li className="flex items-start transform transition-all duration-300 hover:translate-x-2 group">
-            <div className="bg-gradient-to-br from-primary-600 to-primary-400 p-1.5 rounded-full mr-3 mt-0.5 group-hover:shadow-lg group-hover:shadow-primary-500/20">
-              <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-              </svg>
+          </div>
+          <div className="flex items-center justify-between p-3 bg-dark-input rounded-lg hover:bg-gray-800 transition-colors cursor-pointer group">
+            <div className="flex items-center">
+              <div className="bg-red-500/20 p-1.5 rounded-lg mr-3">
+                <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+              </div>
+              <div>
+                <p className="text-sm text-white">Sent ETH</p>
+                <p className="text-xs text-gray-400">1 day ago</p>
+              </div>
             </div>
-            <p className="text-gray-300 group-hover:text-white transition-colors">Social recovery options for account access</p>
-          </li>
-        </ul>
-        
-        {/* Transaction history preview */}
+            <div className="text-right">
+              <p className="text-sm font-medium text-red-500">-0.1 ETH</p>
+              <p className="text-xs text-gray-400 group-hover:text-primary-400 transition-colors">View</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Security features section */}
         <div className="mt-6 pt-6 border-t border-gray-700">
           <h4 className="text-white font-medium mb-4 flex items-center">
-            <svg className="w-4 h-4 mr-2 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
-            </svg>
-            Recent Activity
+            <div className="bg-primary-500/20 p-1.5 rounded-lg mr-3">
+              <FaShieldAlt className="text-primary-400 text-lg" />
+            </div>
+            Security Features
           </h4>
-          <div className="space-y-3">
-            <div className="flex items-center justify-between p-3 bg-dark-input rounded-lg hover:bg-gray-800 transition-colors cursor-pointer group">
-              <div className="flex items-center">
-                <div className="bg-green-500/20 p-1.5 rounded-lg mr-3">
-                  <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-sm text-white">Received ETH</p>
-                  <p className="text-xs text-gray-400">2 hours ago</p>
-                </div>
+          <ul className="space-y-4">
+            <li className="flex items-start transform transition-all duration-300 hover:translate-x-2 group">
+              <div className="bg-gradient-to-br from-primary-600 to-primary-400 p-1.5 rounded-full mr-3 mt-0.5 group-hover:shadow-lg group-hover:shadow-primary-500/20">
+                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                </svg>
               </div>
-              <div className="text-right">
-                <p className="text-sm font-medium text-green-500">+0.05 ETH</p>
-                <p className="text-xs text-gray-400 group-hover:text-primary-400 transition-colors">View</p>
+              <p className="text-gray-300 group-hover:text-white transition-colors">Secure key management with no seed phrases to remember</p>
+            </li>
+            <li className="flex items-start transform transition-all duration-300 hover:translate-x-2 group">
+              <div className="bg-gradient-to-br from-primary-600 to-primary-400 p-1.5 rounded-full mr-3 mt-0.5 group-hover:shadow-lg group-hover:shadow-primary-500/20">
+                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                </svg>
               </div>
-            </div>
-            <div className="flex items-center justify-between p-3 bg-dark-input rounded-lg hover:bg-gray-800 transition-colors cursor-pointer group">
-              <div className="flex items-center">
-                <div className="bg-red-500/20 p-1.5 rounded-lg mr-3">
-                  <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-sm text-white">Sent ETH</p>
-                  <p className="text-xs text-gray-400">1 day ago</p>
-                </div>
+              <p className="text-gray-300 group-hover:text-white transition-colors">Multi-factor authentication for transaction approval</p>
+            </li>
+            <li className="flex items-start transform transition-all duration-300 hover:translate-x-2 group">
+              <div className="bg-gradient-to-br from-primary-600 to-primary-400 p-1.5 rounded-full mr-3 mt-0.5 group-hover:shadow-lg group-hover:shadow-primary-500/20">
+                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                </svg>
               </div>
-              <div className="text-right">
-                <p className="text-sm font-medium text-red-500">-0.1 ETH</p>
-                <p className="text-xs text-gray-400 group-hover:text-primary-400 transition-colors">View</p>
-              </div>
-            </div>
-          </div>
+              <p className="text-gray-300 group-hover:text-white transition-colors">Social recovery options for account access</p>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

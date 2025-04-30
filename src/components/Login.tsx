@@ -25,8 +25,8 @@ export const Login: React.FC = () => {
 
   if (user) {
     return (
-      <div className="bg-dark-card p-8 rounded-xl shadow-2xl w-full max-w-md backdrop-blur-sm bg-opacity-90 border border-gray-800 transform transition-all duration-500 hover:shadow-primary-500/10 hover:border-primary-500/30 animate-fade-in">
-        <div className="relative mb-6">
+      <div className="bg-dark-card p-4 pt-3 rounded-xl shadow-2xl w-full max-w-md backdrop-blur-sm bg-opacity-90 border border-gray-800 transform transition-all duration-500 hover:shadow-primary-500/10 hover:border-primary-500/30 animate-fade-in">
+        <div className="relative mb-2">
           <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-primary-400/20 rounded-lg filter blur-xl opacity-50"></div>
           {user.avatar && (
             <div className="flex justify-center relative">
@@ -35,26 +35,26 @@ export const Login: React.FC = () => {
                 <img 
                   src={user.avatar} 
                   alt="User avatar" 
-                  className="w-24 h-24 rounded-full border-2 border-dark-card"
+                  className="w-20 h-20 rounded-full border-2 border-dark-card"
                 />
               </div>
             </div>
           )}
         </div>
         
-        <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold mb-1 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+        <div className="text-center mb-2">
+          <h2 className="text-xl font-bold mb-0.5 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
             {user.name || 'User'}
           </h2>
-          <p className="text-gray-400">{user.email}</p>
-          <div className="mt-2 inline-block px-3 py-1 bg-neon-purple/20 rounded-full text-xs text-neon-purple font-medium animate-neon-glow">
+          <p className="text-gray-400 text-sm">{user.email}</p>
+          <div className="mt-0.5 inline-block px-2 py-0.5 bg-neon-purple/20 rounded-full text-xs text-neon-purple font-medium animate-neon-glow">
             {user.provider === 'google' ? 'Google Account' : 'Secure Identity'}
           </div>
         </div>
         
         <button
           onClick={logout}
-          className="w-full py-3 px-4 bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-gray-300 rounded-lg border border-gray-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 group"
+          className="w-full py-2 px-4 bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-gray-300 rounded-lg border border-gray-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 group"
         >
           <FaSignOutAlt className="text-gray-400 group-hover:text-primary-400 transition-colors" />
           <span>Sign Out</span>
